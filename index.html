@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<!-- 
+* app		SimpleTimer
+* by 		Samuel Fernandez 
+* version	2.8 (2015-xx-xx)
+* notes		add credits and terms of use..
+* package	index.html, style.css, main.js
+* version history
+* 2.7 (2015-10-19): small enhancements, able to play pre-defined mp3 file, optimize app by reduce global variables
+* 2.6 (2015-10-9): added: styling on progress bar, background image, sticky footer
+* 2.5 (2015-10-8): show time remaining, added background image
+* 2.0 (2015-10-7): added progress bar styling
+* 1.1 (2015-10-6)
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SimpleTimer by Sam</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+	<div class="container">
+		<div id="barcontainer">
+			<div id="bar" class="progressbar"><p id="progressStatus">&nbsp;</p></div>
+		</div>
+		<div id="samTimer">
+			<div class="TimerSetup">
+				<form>
+					<p>SimpleTimer by Sam</p>
+					<p>Start a timer:
+						<input type="text" id="duration" name="duration" size="6" maxlength="4" placeholder="in minutes" />
+						<button id="btnStart">Start</button>&nbsp;
+						<button id="btnReset">Restart</button>
+					</p>
+				</form>
+			</div>
+		<div class="hideTimer" id="timerDisplay">
+				<p id="startTime">&nbsp;</p>
+				<p id="runDisplay" class="normal">&nbsp;</p>
+				<p id="timeRemaining" class="normal">&nbsp;</p>
+				<p id="endTime">&nbsp;</p>
+			</div>
+		</div>
+	</div>
+	<div class="player">
+		<div>
+			<p>If you like, click the Play button below to listen to a relaxing music.</p>
+			<p>(Jesu, Joy Of Man's Desiring by Johann Sebastian Bach)</p>
+		</div>
+		<audio controls>
+			<source src="jesu.mp3" type="audio/mpeg"/>
+			Your browser does not support the audio element.
+		</audio>
+	</div>	
+	<audio id="doneBeep" src="beep-02.wav" preload="auto"></audio>
+	<footer>
+		<div><p class="go-left">Credits</p></div>
+		<div><p class="go-left">Terms of Use</p></div>
+		<div><p class="go-right">SimpleTimer ver 2.6 &copy; 2015 Sam Fernandez</p></div>
+	</footer>
+	<script type="text/javascript" src="main.js"></script>
+	
+</body>
+</html>

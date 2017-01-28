@@ -1,0 +1,176 @@
+/* 
+* app		SimpleTimer
+* by 		Samuel Fernandez 
+* version	2.7 (2015-10-19)
+* notes		small enhancements, able to play pre-defined mp3 file, optimize app by reduce global variables
+* package	index.html, style.css, main.js
+* version history
+* 2.6 (2015-10-9): added: styling on progress bar, background image, sticky footer
+* 2.5 (2015-10-8): show time remaining, added background image
+* 2.0 (2015-10-7): added progress bar styling
+* 1.1 (2015-10-6)
+*/
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: open-sans, Arial;
+	/* background-image:url("giftly.png"); */
+	/* background-image:url("congruent_pentagon.png"); */
+	/* background-image:url("skulls.png"); */
+	/* background-image:url("swirl_pattern.png"); */
+	background-image:url("school.png");
+	padding: 0;
+	
+	/* for sticky footer */
+	margin: 0 0 40px; /* 40px is the footer height */
+	margin-top: 0px;
+
+}
+
+.container {
+	margin: -16px auto;
+	padding: 0;
+	background-color: transparent;
+}
+
+.go-left { 
+	float: left;
+	padding-left: 20px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	font-size: 90%;
+}
+.go-right { 
+	float: right; 
+	padding-right: 20px;
+	padding-bottom: 0px;
+	margin-bottom: 0px;
+	font-size: 90%;
+}
+
+#samTimer {
+	-webkit-box-shadow: -2px -2px 5px 0px rgba(33,62,83,0.7);
+	-moz-box-shadow: -2px -2px 5px 0px rgba(33,62,83,0.7);
+	box-shadow: -2px -2px 5px 0px rgba(33,62,83,0.7);
+	
+/* 	-webkit-box-shadow: -3px -2px 5px 0px rgba(154,155,166,1);
+	-moz-box-shadow: -3px -2px 5px 0px rgba(154,155,166,1);
+	box-shadow: -3px -2px 5px 0px rgba(154,155,166,1); */
+	
+/* 	-webkit-box-shadow: -4px 3px 5px 0px rgba(154,155,166,1);
+	-moz-box-shadow: -4px 3px 5px 0px rgba(154,155,166,1);
+	box-shadow: -4px 3px 5px 0px rgba(154,155,166,1); */
+	width: 522px;
+	margin: 40px auto;
+}
+#barcontainer {
+	background-color: #f1f1f1;
+	box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+	-moz-box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+	-webkit-box-shadow: 0px 0px 15px rgba(33,62,83,0.7) inset;
+}
+
+.progressbar {
+    background-color: #FF8834;
+	box-shadow: 3px 0 3px -3px rgba(33,62,83,0.7);
+	-moz-box-shadow: 3px 0 3px -3px rgba(33,62,83,0.7);
+	-webkit-box-shadow: 3px 0 3px -3px rgba(33,62,83,0.7);
+    width: 0%;
+}
+
+#progressStatus {
+    /* color: #fff; */
+	margin-right: 5px;
+	text-align: right;
+}
+
+.TimerSetup, .showTimer {
+    width: 500px;
+    margin: auto;
+    padding: 0px 10px;
+    border: 1px solid #4343CF;
+    background-color: #f1f1f1;
+    display: block;
+}
+#btnStart, #btnReset {
+    cursor:pointer;
+}
+.showTimer {
+    background-color: #4343CF; /* #4285f4; */
+    display: block;
+  
+}
+
+.TimerSetup {
+	padding: 10px;
+}
+.showTimer p, .TimerSetup p {
+    background-color: #f1f1f1; 
+    padding: 5px;
+    text-align: center;
+}
+.hideTimer {
+    display: none;
+}
+p#startTime, p#endTime {
+     background-color: #4343CF; /* #4285f4; */
+     color: #F6FE5B;
+     font-size: 90%;
+}
+
+p.normal {
+    color: #13139A;
+    background-color: #F8FE87;
+	font-size: 150%;	/* newly added */
+}
+
+p.finished {
+    color: #2222C5;
+    background-color: #FF8834;
+	font-size: 150%;	/* newly added */
+}
+
+.player {
+
+	text-align: center;
+}
+
+footer {
+    /* for sticky footer */
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 40px;
+    width: 100%;
+	/* end for sticky footer */
+	
+	background-color: #FF8834;
+}
+
+#thanksnote, #termsnote {
+	color: #000;
+	background-color: #F8FE87; /* 4343CF; #000; */
+	opacity: 0.93;
+	-webkit-box-shadow: -2px -2px 5   px 0px rgba(33,62,83,0.7);
+	-moz-box-shadow: -2px -2px 5px 0px rgba(33,62,83,0.7);
+	box-shadow: -2px -2px 5px 0px rgba(33,62,83,0.7);
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -6.5em; /* height/2 */
+    margin-left: -11em; /* width/2 */
+    height: 13em;
+	width: 20em;
+	padding: 1em 1em 2em 1em;
+	text-align: center;
+  }
+  
+/* #timerDisplay {
+	//rounded corners
+	border-bottom-right-radius: 0.7em;
+	border-bottom-left-radius: 0.7em;
+} */
